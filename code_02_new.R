@@ -119,14 +119,6 @@ table = merge(highschool, college, by = c("year"))
 forplot = table %>%
   mutate(relsupply = index.x/index.y)
 
-#supindex <- lsupavgwage %>%
-#  group_by(year) %>%
-#  summarise(index = log(mean(sindex)))
-
-#ggplot(data = supindex)+ 
-#  geom_line(mapping = aes(x = year, y = log(index))) +
-# ggtitle('College/high-school log relative supply')
-
 ggplot(forplot, aes(x = year, y = relsupply)) +
   geom_point(colour = 'red') +
   geom_line() +
